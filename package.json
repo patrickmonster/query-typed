@@ -1,0 +1,64 @@
+{
+    "name": "query-typed",
+    "version": "1.0.0",
+    "description": "TypeScript SQL query parser with compile-time column type extraction",
+    "main": "dist/cjs/index.js",
+    "module": "dist/mjs/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "scripts": {
+        "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "prepublishOnly": "npm run test && npm run build",
+        "clean": "rm -rf dist"
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/mjs/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrickmonster/query-typed.git"
+    },
+    "author": "Soung jin Ryu <neocat@kakao.com>",
+    "homepage": "https://github.com/patrickmonster/query-typed#readme",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "@types/node": "^22.13.1",
+        "jest": "^30.0.4",
+        "ts-jest": "^29.4.0",
+        "typescript": "^5.7.3"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "arrowParens": "avoid",
+        "endOfLine": "lf",
+        "singleQuote": true,
+        "semi": true,
+        "bracketSpacing": true,
+        "printWidth": 120,
+        "tabWidth": 4
+    },
+    "dependencies": {},
+    "keywords": [
+        "typescript",
+        "sql",
+        "parser",
+        "mysql",
+        "type-safe",
+        "compile-time",
+        "template-literal",
+        "column-extraction",
+        "query-builder"
+    ],
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ]
+}
