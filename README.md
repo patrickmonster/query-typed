@@ -245,6 +245,7 @@ console.log('✅ 유효한 사용자 쿼리:', validUserQuery);
 
 - [기본 사용법](./examples/basic-usage.ts)
 - [타입 안전성](./examples/type-safety.ts)
+- [Weather Dashboard](./examples/weather-dashboard/) - 실제 웹 애플리케이션 예제
 
 ## 🧪 테스트
 

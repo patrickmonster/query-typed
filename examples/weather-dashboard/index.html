@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <p>Get current weather and 5-day forecast for any location</p>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="locationInput" 
+                        placeholder="Enter city name or ZIP code"
+                        class="location-input"
+                    >
+                    <button id="searchButton" class="search-button">
+                        Get Weather
+                    </button>
+                </div>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </section>
+
+            <section id="currentWeather" class="current-weather hidden">
+                <h2>Current Weather</h2>
+                <div class="weather-card">
+                    <div class="weather-main">
+                        <div class="temperature">
+                            <span id="currentTemp">--</span>°C
+                        </div>
+                        <div class="weather-info">
+                            <h3 id="currentLocation">--</h3>
+                            <p id="currentCondition">--</p>
+                            <p id="currentDate">--</p>
+                        </div>
+                        <div class="weather-icon">
+                            <img id="currentIcon" src="" alt="Weather icon">
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Humidity</span>
+                            <span id="currentHumidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Wind Speed</span>
+                            <span id="currentWindSpeed">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Feels Like</span>
+                            <span id="currentFeelsLike">--°C</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pressure</span>
+                            <span id="currentPressure">-- hPa</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="forecast" class="forecast hidden">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast cards will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html>
